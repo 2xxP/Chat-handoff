@@ -1,0 +1,5 @@
+{
+  "name": "chat-handoff",
+  "owner": { "name": "2xxP" },
+  "plugins": [{ "name": "chat-handoff", "source": "./" }]
+}

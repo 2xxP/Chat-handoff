@@ -1,0 +1,35 @@
+{
+  "name": "chat-handoff",
+  "version": "0.1.0",
+  "description": "Shows how full the chat is, warns when it gets long, and writes a handoff note to paste into a new chat (/handoff).",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "warnAtPercent": {
+      "type": "number",
+      "title": "Warn when the chat is this full (%)",
+      "description": "How much of the model's context window the chat may fill before you are told. The warning repeats every 10 points after that.",
+      "default": 60,
+      "min": 10,
+      "max": 95
+    },
+    "whenReached": {
+      "type": "string",
+      "title": "At the warning point",
+      "description": "warn: tell you and offer the handoff. write: tell you and write the handoff straight away.",
+      "options": ["warn", "write"],
+      "default": "warn"
+    },
+    "saveFolder": {
+      "type": "string",
+      "title": "Folder for saved handoffs",
+      "description": "Each handoff is shown in the chat and also saved here, inside the working directory. Leave empty to keep it in the chat only.",
+      "default": "handoffs"
+    },
+    "alwaysInclude": {
+      "type": "string",
+      "title": "Always include",
+      "description": "Your own list of things every handoff must cover, on top of the standard sections. Separate items with commas.",
+      "default": ""
+    }
+  }
+}
